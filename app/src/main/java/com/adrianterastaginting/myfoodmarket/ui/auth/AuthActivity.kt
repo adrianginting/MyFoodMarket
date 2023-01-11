@@ -17,7 +17,6 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
 
         val pageRequest = intent.getIntExtra("page_request",0)
         if (pageRequest == 2){
@@ -33,18 +32,23 @@ class AuthActivity : AppCompatActivity() {
     }
 
     fun toolbarSignup(){
-        binding.toolbar.title = "Sign Up"
-        binding.toolbar.subtitle = "Register and meat"
-        binding.toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_arrow_back_ios_24px_outlined, null)
-        binding.toolbar.setNavigationOnClickListener { onBackPressed()}
+        binding.includeToolbar.apply {
+            toolbar.title = "Sign Up"
+            toolbar.subtitle = "Register and meat"
+            toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_arrow_back_ios_24px_outlined, null)
+            toolbar.setNavigationOnClickListener { onBackPressed() }
+        }
     }
     fun toolbarSignupAddress(){
-        binding.toolbar.title = "Address"
-        binding.toolbar.subtitle = "Make sure it's valid"
-        binding.toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_arrow_back_ios_24px_outlined, null)
-        binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+        binding.includeToolbar.apply {
+            toolbar.title = "Address"
+            toolbar.subtitle = "Make sure it's valid"
+            toolbar.navigationIcon = resources.getDrawable(R.drawable.ic_arrow_back_ios_24px_outlined, null)
+            toolbar.setNavigationOnClickListener { onBackPressed() }
+        }
+
     }
     fun toolbarSignupSuccess(){
-        binding.toolbar.visibility = View.GONE
+        binding.includeToolbar.toolbar.visibility = View.GONE
     }
 }

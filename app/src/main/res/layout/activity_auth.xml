@@ -7,20 +7,10 @@
     android:orientation="vertical"
     tools:context=".ui.auth.AuthActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <include layout="@layout/layout_toolbar"
+        android:id="@+id/includeToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="24dp"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:subtitle="Register and eat"
-        app:subtitleTextAppearance="@style/TextView.PoppinsNormal14sp8d92a3"
-        app:title="Sign Up"
-        app:titleTextAppearance="@style/TextView.PoppinsNormal16sp020202" />
+        android:layout_height="wrap_content" />
 
     <fragment
         android:id="@+id/authHostFragment"
@@ -29,6 +19,5 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_auth"/>
-
 
 </LinearLayout>
