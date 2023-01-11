@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import com.adrianterastaginting.myfoodmarket.databinding.ActivitySplashScreenBinding
 import com.adrianterastaginting.myfoodmarket.ui.auth.AuthActivity
 
@@ -16,9 +17,9 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Handler().postDelayed({
+        Handler(Looper.getMainLooper()).postDelayed({
+            // Your Code
             startActivity(Intent(this, AuthActivity::class.java))
         }, 3000)
-
     }
 }

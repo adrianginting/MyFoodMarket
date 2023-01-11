@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:layout_marginTop="24dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="26dp"
+    android:orientation="vertical"
+    tools:context=".ui.auth.signup.SignupFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="26dp"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:src="@drawable/image_profile_bg"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:text="Full Name" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:layout_marginTop="6dp"
+            android:padding="10dp"
+            android:hint="Type your full name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:text="Email Address" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:layout_marginTop="6dp"
+            android:padding="10dp"
+            android:hint="Type your mail address" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@style/TextView.PoppinsNormal16sp020202"
+            android:text="Password" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            style="@style/EditText.PoppinsNormal14sp8D92A3"
+            android:background="@drawable/shape_rectangle_outline_8_020202"
+            android:layout_marginTop="6dp"
+            android:padding="10dp"
+            android:hint="Type your mail password" />
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            style="@style/Button.Primary"
+            android:text="CONTINUE" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
