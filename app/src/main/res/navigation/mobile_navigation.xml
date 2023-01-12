@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.adrianterastaginting.myfoodmarket.home.HomeFragment"
+        android:name="com.adrianterastaginting.myfoodmarket.ui.main.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_order"
-        android:name="com.adrianterastaginting.myfoodmarket.order.OrderFragment"
+        android:name="com.adrianterastaginting.myfoodmarket.ui.main.order.OrderFragment"
         android:label="@string/title_order"
         tools:layout="@layout/fragment_order" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.adrianterastaginting.myfoodmarket.profile.Profile"
+        android:name="com.adrianterastaginting.myfoodmarket.ui.main.profile.Profile"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
