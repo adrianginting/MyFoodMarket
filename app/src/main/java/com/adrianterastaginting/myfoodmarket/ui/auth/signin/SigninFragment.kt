@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.adrianterastaginting.myfoodmarket.MainActivity
 import com.adrianterastaginting.myfoodmarket.R
 import com.adrianterastaginting.myfoodmarket.databinding.FragmentSigninBinding
 import com.adrianterastaginting.myfoodmarket.ui.auth.AuthActivity
@@ -43,7 +44,9 @@ class SigninFragment : Fragment(), View.OnClickListener {
                 startActivity(signup)
             }
             R.id.btnSignin -> {
-                Toast.makeText(this.activity, "Maaf Fitur SignIn Belum bisa", Toast.LENGTH_LONG).show()
+                val signin = Intent(activity, MainActivity::class.java)
+                startActivity(signin)
+                activity?.finish()
             }
         }
     }

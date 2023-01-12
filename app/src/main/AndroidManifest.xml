@@ -13,18 +13,10 @@
         android:theme="@style/Theme.MyFoodMarket.noActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".ui.auth.AuthActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -32,13 +24,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        <activity android:name=".ui.auth.AuthActivity"> </activity>
+        <activity android:name=".MainActivity"> </activity>
+
+
     </application>
 
 </manifest>
