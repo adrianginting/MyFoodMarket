@@ -17,7 +17,7 @@ class HomeFragment : Fragment() {
 //, HomeAdapter.OnItemClickCallback
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private var footList: ArrayList<HomeModel> = ArrayList()
+    //private var footList: ArrayList<HomeModel> = ArrayList()
     private val list = ArrayList<HomeModel>()
 
     override fun onCreateView(
@@ -31,14 +31,21 @@ class HomeFragment : Fragment() {
 
         list.addAll(getListData())
         showRecyclerView()
+
+        val sectionPagerAdapter = SectionPagerAdapter(
+            childFragmentManager
+        )
+        binding.viewPager.adapter = sectionPagerAdapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
         return binding.root
     }
 
     private fun getListData(): ArrayList<HomeModel>{
         val dataTitle = listOf("Bakwan", "Pisang Goreng","Tahu Tumbuk")
-        val dataSrc = listOf("https://www.piknikdong.com/wp-content/uploads/2020/05/Resep-Bakwan-Sayur-.jpg",
+        val dataSrc = listOf("https://media.suara.com/pictures/970x544/2019/12/10/88810-bakwan-sayur.jpg",
                                 "https://cdn.idntimes.com/content-images/community/2021/01/fromandroid-a853a450a09f5853a9cf78691a52da1f_600x400.jpg",
-                                "https://resepkoki.id/wp-content/uploads/2019/07/Resep-Tahu-Bubuk.jpg")
+                                "https://cdns.klimg.com/dream.co.id/resources/news/2014/10/20/6240/1200x600-resep-tahu-telur-khas-semarang-resep-tahu-telur-khas-semarang--1410207.jpg")
         val dataRating = listOf(4f, 3f, 6f)
         val listData = ArrayList<HomeModel>()
         for (i in dataTitle.indices) {

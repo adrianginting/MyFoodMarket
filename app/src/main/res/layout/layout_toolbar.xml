@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:subtitle="Register and eat"
-        app:subtitleTextAppearance="@style/TextView.PoppinsNormal14sp8d92a3"
+        app:subtitleTextAppearance="@style/TextView.PoppinsNormal14sp8D92A3"
         app:title="Sign Up"
         app:titleTextAppearance="@style/TextView.PoppinsNormal16sp020202" />
 

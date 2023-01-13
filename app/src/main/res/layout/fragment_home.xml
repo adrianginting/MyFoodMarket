@@ -29,13 +29,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="30dp"
-            android:text="FoodMarket"
+            android:text="@string/app_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvSubtitle"
-            style="@style/TextView.PoppinsNormal14sp8d92a3"
+            style="@style/TextView.PoppinsNormal14sp8D92A3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
