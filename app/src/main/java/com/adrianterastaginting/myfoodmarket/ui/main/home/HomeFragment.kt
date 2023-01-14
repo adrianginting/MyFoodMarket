@@ -1,5 +1,6 @@
 package com.adrianterastaginting.myfoodmarket.ui.main.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.adrianterastaginting.myfoodmarket.MainActivity
 import com.adrianterastaginting.myfoodmarket.databinding.FragmentHomeBinding
 import com.adrianterastaginting.myfoodmarket.model.dummy.HomeModel
+import com.adrianterastaginting.myfoodmarket.ui.detail.DetailActivity
 
-class HomeFragment : Fragment() {
-//, HomeAdapter.OnItemClickCallback
+class HomeFragment : Fragment(){
+//, HomeAdapter.OnItemClickCallback, View.OnClickListener
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     //private var footList: ArrayList<HomeModel> = ArrayList()
@@ -28,7 +31,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.rcList.setHasFixedSize(true)
-
+        //binding.rcList.setOnClickListener(this)
         list.addAll(getListData())
         showRecyclerView()
 
@@ -42,7 +45,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getListData(): ArrayList<HomeModel>{
-        val dataTitle = listOf("Bakwan", "Pisang Goreng","Tahu Tumbuk")
+        val dataTitle = listOf("Click", "Pisang Goreng","Tahu Tumbuk")
         val dataSrc = listOf("https://media.suara.com/pictures/970x544/2019/12/10/88810-bakwan-sayur.jpg",
                                 "https://cdn.idntimes.com/content-images/community/2021/01/fromandroid-a853a450a09f5853a9cf78691a52da1f_600x400.jpg",
                                 "https://cdns.klimg.com/dream.co.id/resources/news/2014/10/20/6240/1200x600-resep-tahu-telur-khas-semarang-resep-tahu-telur-khas-semarang--1410207.jpg")
@@ -62,21 +65,29 @@ class HomeFragment : Fragment() {
 
         listDataAdapter.setOnItemClickCallback(object : HomeAdapter.OnItemClickCallback{
             override fun onItemClicked(data: HomeModel) {
-                showSelectedData(data)
+                val toDetail = Intent(activity, DetailActivity::class.java)
+                startActivity(toDetail)
+                //showSelectedData(data)
             }
         })
     }
+
+
+    private fun showSelectedData(data: HomeModel) {
+        /*Toast.makeText(context, "Kamu memilih " + data.title, Toast.LENGTH_SHORT).show()
+        val toDetail = Intent(context, DetailActivity::class.java)
+        startActivity(toDetail)*/
+    }
+
+/*    override fun onItemClicked(data: HomeModel) {
+        Toast.makeText(context, "Kamu memilih ", Toast.LENGTH_SHORT).show()
+        //val toDetail = Intent(context, DetailActivity::class.java)
+        //startActivity(toDetail)
+    }*/
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-    private fun showSelectedData(data: HomeModel) {
-        Toast.makeText(context, "Kamu memilih " + data.title, Toast.LENGTH_SHORT).show()
-    }
-
-    /*override fun onItemClicked(data: HomeModel) {
-        Toast.makeText(context, "Kamu memilih ", Toast.LENGTH_SHORT).show()
-    }*/
 }

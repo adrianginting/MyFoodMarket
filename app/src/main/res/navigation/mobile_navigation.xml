@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.adrianterastaginting.myfoodmarket.ui.main.profile.Profile"
+        android:name="com.adrianterastaginting.myfoodmarket.ui.main.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
