@@ -31,11 +31,6 @@ class SigninFragment : Fragment(), View.OnClickListener {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnSignup -> {
@@ -51,4 +46,8 @@ class SigninFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

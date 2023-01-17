@@ -8,7 +8,7 @@
     tools:context=".ui.detail.DetailActivity">
 
     <include layout="@layout/layout_toolbar"
-        android:id="@+id/include_toolbar"
+        android:id="@+id/include_toolbar_Detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

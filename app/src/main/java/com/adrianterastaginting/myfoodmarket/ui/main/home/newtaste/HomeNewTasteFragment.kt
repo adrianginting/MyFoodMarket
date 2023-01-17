@@ -1,5 +1,6 @@
 package com.adrianterastaginting.myfoodmarket.ui.main.home.newtaste
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.adrianterastaginting.myfoodmarket.databinding.FragmentHomeNewTasteBinding
 import com.adrianterastaginting.myfoodmarket.model.dummy.HomeModel
 import com.adrianterastaginting.myfoodmarket.model.dummy.HomeVerticalModel
+import com.adrianterastaginting.myfoodmarket.ui.detail.DetailActivity
 import com.adrianterastaginting.myfoodmarket.ui.main.home.HomeAdapter
 import com.adrianterastaginting.myfoodmarket.ui.main.home.SectionPagerAdapter
 
@@ -48,7 +50,7 @@ class HomeNewTasteFragment : Fragment() {
     }
 
     private fun getListData(): ArrayList<HomeVerticalModel>{
-        val dataTitle = listOf("Bakwan", "Pisang Goreng","Tahu Tumbuk")
+        val dataTitle = listOf("Bakwan NewTaste", "Pisang Goreng NewTaste","Tahu Tumbuk NewTaste")
         val dataPrice = listOf("10000", "15000","23000")
         val dataSrc = listOf("https://media.suara.com/pictures/970x544/2019/12/10/88810-bakwan-sayur.jpg",
             "https://cdn.idntimes.com/content-images/community/2021/01/fromandroid-a853a450a09f5853a9cf78691a52da1f_600x400.jpg",
@@ -64,6 +66,8 @@ class HomeNewTasteFragment : Fragment() {
 
     private fun showSelectedData(data: HomeVerticalModel) {
         Toast.makeText(context, "Kamu memilih " + data.title, Toast.LENGTH_SHORT).show()
+        val toDetail = Intent(activity, DetailActivity::class.java)
+        startActivity(toDetail)
     }
 
     override fun onDestroyView() {

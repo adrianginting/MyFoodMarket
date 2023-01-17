@@ -1,5 +1,6 @@
 package com.adrianterastaginting.myfoodmarket.ui.main.home.popular
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adrianterastaginting.myfoodmarket.databinding.FragmentHomeNewTasteBinding
 import com.adrianterastaginting.myfoodmarket.model.dummy.HomeVerticalModel
+import com.adrianterastaginting.myfoodmarket.ui.detail.DetailActivity
 import com.adrianterastaginting.myfoodmarket.ui.main.home.newtaste.HomeNewTasteAdapter
 
 
@@ -61,6 +63,8 @@ class HomePopularFragment : Fragment() {
 
     private fun showSelectedData(data: HomeVerticalModel) {
         Toast.makeText(context, "Kamu memilih " + data.title, Toast.LENGTH_SHORT).show()
+        val toDetail = Intent(activity, DetailActivity::class.java)
+        startActivity(toDetail)
     }
 
     override fun onDestroyView() {

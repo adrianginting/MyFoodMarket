@@ -65,18 +65,16 @@ class HomeFragment : Fragment(){
 
         listDataAdapter.setOnItemClickCallback(object : HomeAdapter.OnItemClickCallback{
             override fun onItemClicked(data: HomeModel) {
-                val toDetail = Intent(activity, DetailActivity::class.java)
-                startActivity(toDetail)
-                //showSelectedData(data)
+                showSelectedData(data)
             }
         })
     }
 
 
     private fun showSelectedData(data: HomeModel) {
-        /*Toast.makeText(context, "Kamu memilih " + data.title, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Kamu memilih " + data.title, Toast.LENGTH_SHORT).show()
         val toDetail = Intent(context, DetailActivity::class.java)
-        startActivity(toDetail)*/
+        startActivity(toDetail)
     }
 
 /*    override fun onItemClicked(data: HomeModel) {
